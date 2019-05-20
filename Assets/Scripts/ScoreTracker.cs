@@ -25,6 +25,7 @@ public class ScoreTracker : MonoBehaviour
    
    void Awake()
    {
+      //PlayerPrefs.DeleteAll();
       Instance = this;
 
       if (!PlayerPrefs.HasKey("HighScore"))
