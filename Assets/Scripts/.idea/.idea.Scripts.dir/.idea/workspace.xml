@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4343af0-04c4-453d-8241-9d4b93e6128b" name="Default Changelist" comment="" />
+    <list default="true" id="e4343af0-04c4-453d-8241-9d4b93e6128b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameManager.cs" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,17 +78,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GameManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+            <state relative-caret-position="233">
+              <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
               <folding>
-                <marker date="1558307222964" expanded="true" signature="6:78" ph="..." />
-                <marker date="1558307222964" expanded="true" signature="121:1216" ph="{...}" />
-                <marker date="1558307222964" expanded="true" signature="308:558" ph="{...}" />
-                <marker date="1558307222964" expanded="true" signature="428:552" ph="{...}" />
-                <marker date="1558307222964" expanded="true" signature="579:981" ph="{...}" />
-                <marker date="1558307222964" expanded="true" signature="619:975" ph="{...}" />
-                <marker date="1558307222964" expanded="true" signature="1039:1117" ph="{...}" />
-                <marker date="1558307222964" expanded="true" signature="1157:1214" ph="{...}" />
+                <marker date="1558312587456" expanded="true" signature="6:78" ph="..." />
+                <marker date="1558312587456" expanded="true" signature="121:2993" ph="{...}" />
+                <marker date="1558312587456" expanded="true" signature="415:1520" ph="{...}" />
+                <marker date="1558312587456" expanded="true" signature="535:659" ph="{...}" />
+                <marker date="1558312587456" expanded="true" signature="1571:1930" ph="{...}" />
+                <marker date="1558312587456" expanded="true" signature="1632:1901" ph="{...}" />
+                <marker date="1558312587456" expanded="true" signature="1720:1891" ph="{...}" />
+                <marker date="1558312587456" expanded="true" signature="1978:2335" ph="{...}" />
+                <marker date="1558312587456" expanded="true" signature="2037:2306" ph="{...}" />
+                <marker date="1558312587456" expanded="true" signature="2125:2296" ph="{...}" />
+                <marker date="1558312587456" expanded="true" signature="2356:2758" ph="{...}" />
+                <marker date="1558312587456" expanded="true" signature="2396:2752" ph="{...}" />
+                <marker date="1558312587456" expanded="true" signature="2816:2894" ph="{...}" />
+                <marker date="1558312587456" expanded="true" signature="2934:2991" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -100,6 +110,9 @@
       <find>AllTilesOneDim</find>
       <find>AllTiles</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/InputManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -125,6 +138,7 @@
     <option name="width" value="912" />
     <option name="height" value="780" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="FileSystemExplorer" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -137,6 +151,7 @@
   <component name="PropertiesComponent">
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -165,12 +180,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558298714449</updated>
-      <workItem from="1558298720932" duration="7941000" />
+      <workItem from="1558298720932" duration="10225000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7941000" />
+    <option name="totallyTimeSpent" value="10225000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -296,17 +311,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GameManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+        <state relative-caret-position="233">
+          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
           <folding>
-            <marker date="1558307222964" expanded="true" signature="6:78" ph="..." />
-            <marker date="1558307222964" expanded="true" signature="121:1216" ph="{...}" />
-            <marker date="1558307222964" expanded="true" signature="308:558" ph="{...}" />
-            <marker date="1558307222964" expanded="true" signature="428:552" ph="{...}" />
-            <marker date="1558307222964" expanded="true" signature="579:981" ph="{...}" />
-            <marker date="1558307222964" expanded="true" signature="619:975" ph="{...}" />
-            <marker date="1558307222964" expanded="true" signature="1039:1117" ph="{...}" />
-            <marker date="1558307222964" expanded="true" signature="1157:1214" ph="{...}" />
+            <marker date="1558312587456" expanded="true" signature="6:78" ph="..." />
+            <marker date="1558312587456" expanded="true" signature="121:2993" ph="{...}" />
+            <marker date="1558312587456" expanded="true" signature="415:1520" ph="{...}" />
+            <marker date="1558312587456" expanded="true" signature="535:659" ph="{...}" />
+            <marker date="1558312587456" expanded="true" signature="1571:1930" ph="{...}" />
+            <marker date="1558312587456" expanded="true" signature="1632:1901" ph="{...}" />
+            <marker date="1558312587456" expanded="true" signature="1720:1891" ph="{...}" />
+            <marker date="1558312587456" expanded="true" signature="1978:2335" ph="{...}" />
+            <marker date="1558312587456" expanded="true" signature="2037:2306" ph="{...}" />
+            <marker date="1558312587456" expanded="true" signature="2125:2296" ph="{...}" />
+            <marker date="1558312587456" expanded="true" signature="2356:2758" ph="{...}" />
+            <marker date="1558312587456" expanded="true" signature="2396:2752" ph="{...}" />
+            <marker date="1558312587456" expanded="true" signature="2816:2894" ph="{...}" />
+            <marker date="1558312587456" expanded="true" signature="2934:2991" ph="{...}" />
           </folding>
         </state>
       </provider>
