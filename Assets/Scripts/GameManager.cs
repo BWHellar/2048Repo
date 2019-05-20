@@ -23,25 +23,37 @@ public class GameManager : MonoBehaviour
             EmptyTiles.Add (t);
         }
         //Wow this is not a very clever way of doing things but it works I guess.
-        columns.Add(new Tile[] {AllTiles[0, 0], AllTiles[1, 0], AllTiles[2, 0], AllTiles[3, 0]};
-        columns.Add(new Tile[] {AllTiles[0, 1], AllTiles[1, 1], AllTiles[2, 1], AllTiles[3, 1]};
-        columns.Add(new Tile[] {AllTiles[0, 2], AllTiles[1, 2], AllTiles[2, 2], AllTiles[3, 2]};
-        columns.Add(new Tile[] {AllTiles[0, 3], AllTiles[1, 3], AllTiles[2, 3], AllTiles[3, 3]};
+        columns.Add(new Tile[] {AllTiles[0, 0], AllTiles[1, 0], AllTiles[2, 0], AllTiles[3, 0]});
+        columns.Add(new Tile[] {AllTiles[0, 1], AllTiles[1, 1], AllTiles[2, 1], AllTiles[3, 1]});
+        columns.Add(new Tile[] {AllTiles[0, 2], AllTiles[1, 2], AllTiles[2, 2], AllTiles[3, 2]});
+        columns.Add(new Tile[] {AllTiles[0, 3], AllTiles[1, 3], AllTiles[2, 3], AllTiles[3, 3]});
         
-        rows.Add(new Tile[] {AllTiles[0, 0], AllTiles[0, 1], AllTiles[0, 2], AllTiles[0, 3]};
-        rows.Add(new Tile[] {AllTiles[1, 0], AllTiles[1, 1], AllTiles[1, 2], AllTiles[1, 3]};
-        rows.Add(new Tile[] {AllTiles[2, 0], AllTiles[2, 1], AllTiles[2, 2], AllTiles[2, 3]};
-        rows.Add(new Tile[] {AllTiles[3, 0], AllTiles[3, 1], AllTiles[3, 2], AllTiles[3, 3]};
+        rows.Add(new Tile[] {AllTiles[0, 0], AllTiles[0, 1], AllTiles[0, 2], AllTiles[0, 3]});
+        rows.Add(new Tile[] {AllTiles[1, 0], AllTiles[1, 1], AllTiles[1, 2], AllTiles[1, 3]});
+        rows.Add(new Tile[] {AllTiles[2, 0], AllTiles[2, 1], AllTiles[2, 2], AllTiles[2, 3]});
+        rows.Add(new Tile[] {AllTiles[3, 0], AllTiles[3, 1], AllTiles[3, 2], AllTiles[3, 3]});
+
+        Generate();
+        Generate();
     }
 
     bool MakeOneMoveDownIndex(Tile[] LineOfTiles)
     {
-        for (int = 0; i < LineOfTiles.Length - 1; i++)
+        for (int i = 0; i < LineOfTiles.Length - 1; i++)
         {
             if (LineOfTiles[i].Number == 0 && LineOfTiles[i + 1].Number != 0)
             {
                 LineOfTiles[i].Number = LineOfTiles[i + 1].Number;
                 LineOfTiles[i + 1].Number = 0;
+                return true;
+            }
+
+            if (LineOfTiles[i].Number != 0 && LineOfTiles[i].Number == LineOfTiles[i + 1].Number &&
+                            LineOfTiles[i].mergedThisTurn == false && LineOfTiles[i + 1].mergedThisTurn == false)
+            {
+                LineOfTiles[i].Number *= 2;
+                LineOfTiles[i + 1].Number = 0;
+                LineOfTiles[i].mergedThisTurn = true;
                 return true;
             }
         }
@@ -56,6 +68,14 @@ public class GameManager : MonoBehaviour
             {
                 LineOfTiles[i].Number = LineOfTiles[i - 1].Number;
                 LineOfTiles[i - 1].Number = 0;
+                return true;
+            }
+            if (LineOfTiles[i].Number != 0 && LineOfTiles[i].Number == LineOfTiles[i - 1].Number &&
+                LineOfTiles[i].mergedThisTurn == false && LineOfTiles[i - 1].mergedThisTurn == false)
+            {
+                LineOfTiles[i].Number *= 2;
+                LineOfTiles[i - 1].Number = 0;
+                LineOfTiles[i].mergedThisTurn = true;
                 return true;
             }
         }
@@ -76,16 +96,62 @@ public class GameManager : MonoBehaviour
             EmptyTiles.RemoveAt(indexForNewNumber);
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private void ResetMergedFlags()
     {
-        if (Input.GetKeyDown (KeyCode.G))
-            Generate();
+        foreach (Tile t in AllTiles)
+            t.mergedThisTurn = false;
     }
 
+    private void UpdateEmptyTiles()
+    {
+        EmptyTiles.Clear();
+        foreach (Tile t in AllTiles)
+        {
+            if (t.Number == 0)
+                EmptyTiles.Add(t);
+        }
+    }
     public void Move(MoveDirection md)
     {
         Debug.Log(md.ToString() + " move.");
+        bool moveMade = false;
+        ResetMergedFlags();
+        for (int i = 0; i < rows.Count; i++)
+        {
+            switch (md)
+            {
+                case MoveDirection.Down:
+                    while (MakeOneMoveUpIndex(columns[i]))
+                    {
+                        moveMade = true;
+                    }
+                    break;
+                case MoveDirection.Left:
+                    while (MakeOneMoveDownIndex(rows[i]))
+                    {
+                        moveMade = true;
+                    }
+                    break;
+                case MoveDirection.Right:
+                    while (MakeOneMoveUpIndex(rows[i]))
+                    {
+                        moveMade = true;
+                    }
+                    break;
+                case MoveDirection.Up:
+                    while (MakeOneMoveDownIndex(columns[i]))
+                    {
+                        moveMade = true;
+                    }
+                    break;
+            }
+        }
+
+        if (moveMade)
+        {
+            UpdateEmptyTiles();
+            Generate();
+        }
     }
 }

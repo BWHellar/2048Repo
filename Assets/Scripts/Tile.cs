@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Tile : MonoBehaviour
 {
 
+    public bool mergedThisTurn = false;
+    
     public int indRow;
     public int indCol;
     public int Number
